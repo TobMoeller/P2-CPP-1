@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1600334144 source:c:\users\tmide\documents\dev\p2-cpp-1\auto.cpp
+	"auto.h"
+
+1600377170 c:\users\tmide\documents\dev\p2-cpp-1\auto.h
+
+1600340205 source:c:\users\tmide\documents\dev\p2-cpp-1\main.cpp
+	<iostream>
+	"auto.h"
+
+1600377061 source:c:\users\tmide\documents\dev\p2-cpp-1\day9.cpp
+
