@@ -1,31 +1,47 @@
 #include <iostream>
-#include "auto.h"
+#include "types.h"
 
 using namespace std;
 
-int main()
+void exitProgram();
+void day9();
+void day10();
+void day11();
+
+
+int main(void)
 {
-    Auto *auto1 = new Auto();
-    Auto *auto2 = new Auto();
+    system("chcp.com 1252");
+    system("cls");
+    switchDay();
+}
 
-    auto1->setKilometerstand(0);
-    auto1->setGeschwindigkeit(100);
-    auto1->beschleunigen(150);
+void switchDay() {
+    daily day[] = {
+        "Exit Program", exitProgram,
+        "Tag 9", day9,
+        "Tag 10", day10,
+        "Tag 11", day11,
+    };
+    int laenge = sizeof(day)/ sizeof(day[0]);
 
-    auto2->setKilometerstand(99999);
-    auto2->setGeschwindigkeit(99);
-    auto2->beschleunigen(150);
+    caseProgram(day, laenge, switchDay);
+}
 
-    cout << "Auto1: " << endl <<
-            "km-Stand: " << auto1->getKilometerstand() << endl <<
-            "Geschwindigkeit: " << auto1->getGeschwindigkeit() << endl;
+void caseProgram(daily day[], int laenge, void (*function)()) {
+    int caseProgram;
 
-    cout << "Auto2: " << endl <<
-            "km-Stand: " << auto2->getKilometerstand() << endl <<
-            "Geschwindigkeit: " << auto2->getGeschwindigkeit() << endl << endl;
+    cout << endl << endl << "Was möchtest du starten?";
+    for (int i = 1; i < laenge; i++) {
+        cout << endl << "Option (" << i << "): " << day[i].description;
+    }
+    cout << "\nOption (0): Exit Program\n\t";
+    cin >> caseProgram;
 
+    day[caseProgram].function(); // day1()
+    function();
+}
 
-    cout << "Hello world!" " test1" << endl << "test2" << endl; //mit using namespace std;
-    std::cout << "Hello world!" << std::endl; //ohne using namespace std;
-    return 0;
+void exitProgram() {
+    exit(0);
 }

@@ -7,6 +7,7 @@ Auto::Auto()
 
 Auto::~Auto()
 {
+    delete &geschwindigkeit;
     //dtor
 }
 
