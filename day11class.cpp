@@ -13,7 +13,9 @@ void Verein::createMitglied(Spieler *spieler) {
 string Verein::getMitglieder() {
     string ausgabe = "";
     for (int i = 0; i < aktuell; i++) {
-        ausgabe += "\nSpieler: \"" + mitglieder[i]->getName() + "\" mit Score: " + to_string(mitglieder[i]->getScore());
+        ausgabe += "\nSpieler: \"" + mitglieder[i]->getName() +
+            "\" spielt auf Position: \"" + mitglieder[i]->getPosition() +
+            "\" mit Score: " + to_string(mitglieder[i]->getScore());
     }
     return ausgabe;
 }
