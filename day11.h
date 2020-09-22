@@ -1,6 +1,6 @@
-#include <string>
 #ifndef DAY11_H_INCLUDED
 #define DAY11_H_INCLUDED
+#include <string>
 
 // Spieler (abstract parent-class)
 
